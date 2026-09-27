@@ -1,0 +1,80 @@
+import {
+  sumArray,
+  countWords,
+  findMax,
+  isDivisible,
+} from '../functions.js';
+
+describe('sumArray', () => {
+  test('suma un arreglo de números positivos', () => {
+    expect(sumArray([1, 2, 3, 4])).toBe(10);
+  });
+
+  test('suma un arreglo de números negativos', () => {
+    expect(sumArray([-1, -2, -3])).toBe(-6);
+  });
+
+  test('retorna 0 con un arreglo vacío', () => {
+    expect(sumArray([])).toBe(0);
+  });
+
+  test('suma correctamente un arreglo que incluye 0', () => {
+    expect(sumArray([0, 5, 10])).toBe(15);
+  });
+});
+
+describe('countWords', () => {
+  test('cuenta las palabras de una cadena normal', () => {
+    expect(countWords('Hola mundo esto es una prueba')).toBe(6);
+  });
+
+  test('ignora espacios al inicio y al final', () => {
+    expect(countWords('   Hola mundo   ')).toBe(2);
+  });
+
+  test('retorna 0 con una cadena vacía', () => {
+    expect(countWords('')).toBe(0);
+  });
+
+  test('ignora espacios consecutivos entre palabras', () => {
+    expect(countWords('Hola    mundo   prueba')).toBe(3);
+  });
+});
+
+describe('findMax', () => {
+  test('encuentra el número mayor en un arreglo positivo', () => {
+    expect(findMax([5, 2, 9, 3])).toBe(9);
+  });
+
+  test('encuentra el número mayor en un arreglo negativo', () => {
+    expect(findMax([-10, -3, -20, -1])).toBe(-1);
+  });
+
+  test('retorna null con un arreglo vacío', () => {
+    expect(findMax([])).toBeNull();
+  });
+
+  test('retorna el mismo número si todos son iguales', () => {
+    expect(findMax([7, 7, 7, 7])).toBe(7);
+  });
+});
+
+describe('isDivisible', () => {
+  test('retorna true cuando los números son divisibles', () => {
+    expect(isDivisible(10, 2)).toBe(true);
+  });
+
+  test('retorna false cuando los números no son divisibles', () => {
+    expect(isDivisible(10, 3)).toBe(false);
+  });
+
+  test('retorna mensaje de error si el divisor es 0', () => {
+    expect(isDivisible(10, 0)).toBe(
+      'No se puede dividir entre cero',
+    );
+  });
+
+  test('funciona correctamente con números negativos', () => {
+    expect(isDivisible(-10, 2)).toBe(true);
+  });
+});

@@ -1,0 +1,14 @@
+{
+  "name": "practica-jest",
+  "version": "1.0.0",
+  "description": "Práctica de pruebas unitarias con Jest",
+  "type": "module",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
+  },
+  "author": "Leonidas",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "..."
+  }
+}
